@@ -13,7 +13,7 @@ public class Watch {
     private String material;
     private boolean isWaterproof;
 
-    Watch(WatchType type, String brand, double price, String color,
+    public Watch(WatchType type, String brand, double price, String color,
           LocalDate arrivalDate, String material, boolean isWaterproof) {
         this.type = type;
         this.brand = brand;
