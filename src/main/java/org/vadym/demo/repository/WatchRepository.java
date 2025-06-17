@@ -9,16 +9,16 @@ import java.util.Comparator;
 import java.util.List;
 
 public class WatchRepository {
-    private List<Watch> watches;
+    private final List<Watch> watches;
 
-    public WatchRepository(){
-        this.watches = new ArrayList<Watch>();
+    public WatchRepository() {
+        this.watches = new ArrayList<>();
         initializeStore();
     }
 
-    private void initializeStore(){
+    private void initializeStore() {
         watches.add(new Watch(WatchType.QUARTZ, "Casio", 1500, "Black",
-                LocalDate.of(2024, 2,12), "Plastic", true));
+                LocalDate.of(2024, 2, 12), "Plastic", true));
 
         watches.add(new Watch(WatchType.MECHANICAL, "Seiko", 8500, "Silver",
                 LocalDate.of(2025, 1, 20), "Steel", false));
@@ -30,33 +30,33 @@ public class WatchRepository {
                 LocalDate.of(2024, 11, 30), "Steel", true));
     }
 
-    public List<Watch> getWatches(){
+    public List<Watch> getWatches() {
         return new ArrayList<>(watches);
     }
 
-    public void addWatch(Watch watch){
+    public void addWatch(Watch watch) {
         watches.add(watch);
     }
 
-    public double getTotalValue(){
+    public double getTotalValue() {
         return watches.stream()
                 .mapToDouble(Watch::getPrice)
                 .sum();
     }
 
-    public List<Watch> getSortedByPrice(){
+    public List<Watch> getSortedByPrice() {
         List<Watch> sorted = new ArrayList<>(watches);
         sorted.sort(Comparator.comparing(Watch::getPrice));
         return sorted;
     }
 
-    public List<Watch> getSortedByColor(){
+    public List<Watch> getSortedByColor() {
         List<Watch> sorted = new ArrayList<>(watches);
         sorted.sort(Comparator.comparing(Watch::getColor));
         return sorted;
     }
 
-    public List<Watch> getSortedByArrivalDate(){
+    public List<Watch> getSortedByArrivalDate() {
         List<Watch> sorted = new ArrayList<>(watches);
         sorted.sort(Comparator.comparing(Watch::getArrivalDate));
         return sorted;
