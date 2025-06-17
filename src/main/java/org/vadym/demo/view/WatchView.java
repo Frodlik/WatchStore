@@ -42,13 +42,9 @@ public class WatchView {
             return;
         }
 
-        System.out.println("\n" + "=".repeat(20));
-
         for (Watch watch : watches) {
             System.out.println(watch);
         }
-
-        System.out.println("\n" + "=".repeat(20));
     }
 
     public void displayTotalValue(double totalValue) {
